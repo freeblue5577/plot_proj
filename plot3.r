@@ -3,7 +3,7 @@ tab5rows <- read.table("./Downloads/household_power_consumption.txt",head=TRUE,s
 # Get data type for each variable, so that R can read this data set faster
 classes<-sapply(tab5rows,class)
 # Read data into R 
-tabAll <- read.table("./Downloads/household_power_consumption.txt", header = TRUE, colClasses = classes,sep=";",na.String="?")
+tabAll <- read.table("./Downloads/household_power_consumption.txt", header = TRUE, colClasses = classes,sep=";",na.strings="?")
 # Transform data type of "Date" from factor to Date variable 
 tabAll2<-transform(tabAll,Date=as.POSIXlt(as.character(Date),format="%d/%m/%Y"))
 # Subset data for Dates in 2007-02-01 and 2007-02-02 only
